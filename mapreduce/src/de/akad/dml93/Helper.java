@@ -20,6 +20,11 @@ public class Helper {
         return columns;
     }
 
+    public static float parseFloat(String input){
+        if(input.isEmpty()) return 0;
+        return Float.parseFloat(input);
+    }
+
     public static float parsePrice(String priceString) {
         priceString = priceString.replaceAll(",","");
         priceString = priceString.replaceAll("\\$","");
