@@ -6,6 +6,7 @@ set -e
 # to find com.opencsv
 export HADOOP_CLASSPATH="$(pwd)/lib/*:$HADOOP_CLASSPATH"
 
+# clean up output directories
 rm -rf output output-*
 
 # counting occurences of source
@@ -20,8 +21,8 @@ hadoop jar ./out/artifacts/mapreduce_jar/mapreduce.jar countsum:3 ./merged_datas
 hadoop jar ./out/artifacts/mapreduce_jar/mapreduce.jar pricediffavg ./merged_dataset2.csv ./output-pricediffavg
 
 
-# counting average rating (grouped in bins of 0.5) per type
+# counting average rating (grouped in bins of width=0.5) per type
 hadoop jar ./out/artifacts/mapreduce_jar/mapreduce.jar rating:2 ./merged_dataset2.csv ./output-rating-type
-# computing average rating (grouped in bins of 0.5) per brand
+# computing average rating (grouped in bins of width=0.5) per brand
 hadoop jar ./out/artifacts/mapreduce_jar/mapreduce.jar rating:3 ./merged_dataset2.csv ./output-rating-brand
 
