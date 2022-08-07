@@ -74,12 +74,12 @@ def pricediffavg(path_to_hadoop_results="../mapreduce/"):
         for line in f.readlines():
             source, pricediffavg = get_items_in_partr_row_simple(line)
             results["datasource"] += [source]
-            results["pricediffavg"] += [pricediffavg]
+            results["pricediffavg"] += [float(pricediffavg)]
     df = pd.DataFrame.from_dict(results)
     df.to_excel("pricediffavg.xlsx", index=False)
 
 
 if __name__ == '__main__':
-    # deal_count_by_filter()
-    # rating_by_filter()
+    deal_count_by_filter()
+    rating_by_filter()
     pricediffavg()
