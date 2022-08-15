@@ -8,7 +8,7 @@ requests_cache.install_cache('rainforest_cache')
 
 # Set up the request parameters
 params = {
-'api_key': '1DD6DF4727184B8A9214AD1872A248FB',
+  'api_key': '1DD6DF4727184B8A9214AD1872A248FB',
   'type': 'deals',
   'amazon_domain': 'amazon.com',
   'category_id': '1266092011',  # id for category TV & Video
